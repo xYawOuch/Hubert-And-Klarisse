@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HUBERT & KLARISSE</title>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'Stolen Love';
+            src: url('./font/stolen_love.otf') format('opentype');
+            font-display: swap;
+        }
+
+        #headerMain {
+            font-family: 'Stolen Love', Arial, sans-serif;
+        }
+
+        #tabTitle {
+            font-family: 'Stolen Love', Arial, sans-serif;
+        }
+
+        @font-face {
+            font-family: 'Kaewpet';
+            src: url('./font/kaewpet.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        #headerSub {
+            font-family: 'Kaewpet', Arial, sans-serif;
+            position: relative;
+            top: -5pt;
+        }
+
+        @font-face {
+            font-family: 'Niconne Regular';
+            src: url('./font/niconne_regular.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        #headerDate {
+            font-family: 'Niconne Regular', Arial, sans-serif;
+        }
+
+        #headers {
+            font-family: 'Niconne Regular', Arial, sans-serif;
+        }
+
+        @font-face {
+            font-family: 'Moon Time';
+            src: url('./font/moon_time.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        #navBar a {
+            font-family: 'Moon Time', Arial, sans-serif;
+            font-size: 24pt;
+            width: 25%;
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: 'Alice';
+            src: url('./font/alice.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        #bodyFont {
+            font-family: 'Alice', Arial, sans-serif;
+        }
+
+        .invitation {
+            font-family: 'Alice', Arial, sans-serif;
+        }
+
+        @font-face {
+            font-family: 'Eyesome Script';
+            src: url('./font/eyesome_script.otf')
+        }
+
+        body,
+        html {
+            height: 100%;
+            background-color: #E3D7D1
+        }
+
+        .bgimg,
+        .bgimg2 {
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .bgimg {
+            background-image: url("./image/header_img.jpg")
+        }
+
+        .bgimg2 {
+            background-image: url("https://www.w3schools.com/w3images/flowers.jpg")
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Container for the sound icon */
+        .sound-icon {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Speaker box */
+        .speaker {
+            width: 15px;
+            height: 20px;
+            background: #E3D7D1;
+            /* Goldish color */
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            clip-path: polygon(0 0, 75% 25%, 75% 75%, 0 100%);
+        }
+
+        /* Sound waves */
+        .wave {
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #E3D7D1;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            animation: wave 1.5s infinite ease-in-out;
+        }
+
+        /* Wave sizes */
+        .wave:nth-child(2) {
+            left: 40px;
+            width: 15px;
+            height: 15px;
+            animation-delay: 0.2s;
+        }
+
+        .wave:nth-child(3) {
+            left: 55px;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0.4s;
+        }
+
+        /* Wave animation */
+        @keyframes wave {
+            0% {
+                opacity: 1;
+                transform: translateY(-50%) scale(0.8);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-50%) scale(1.5);
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Semi-transparent black */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            /* Hidden by default */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .modal.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .modal-content h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .modal-content button {
+            background-color: #d4a051;
+            /* Gold color */
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-content button:hover {
+            background-color: #b38341;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal" id="invitationModal">
+        <div class="modal-content">
+            <h1 class="invitation w3-xxxlarge">You're Invited</h1>
+            <button class="invitation w3-xlarge" id="openInvitation">Open Invitation</button>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="audio/next-to-me-by-rufus-du-sol.mp3" type="audio/mpeg">
+        <!-- <source src="audio/next-to-you.mp3" type="audio/mpeg"> -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript -->
+    <script>
+        // Elements
+        const modal = document.getElementById('invitationModal');
+        const openInvitationButton = document.getElementById('openInvitation');
+        const audio = document.getElementById('backgroundMusic');
+
+        // Show the modal on page load
+        window.addEventListener('load', () => {
+            modal.classList.add('show');
+        });
+
+        // Close the modal and play music
+        openInvitationButton.addEventListener('click', () => {
+            modal.classList.remove('show');
+            audio.play(); // Play the background music
+            document.body.style.overflow = 'auto'; // Allow scrolling after modal is closed
+        });
+
+        let isPlaying = true;
+
+        function toggleSound() {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.play();
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+    <div class="modal" id="invitationModal">
+        <div class="modal-content">
+            <h1>You're Invited</h1>
+            <button id="openInvitation">Open Invitation</button>
+        </div>
+    </div>
+
+    <!-- Header / Home-->
+    <div class="container-fluid p-0 mb-5 pb-5" id="home">
+        <div class="carousel-inner">
+            <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
+                <img class="position-absolute w-100 h-100" src="image/header_img.jpg" style="object-fit: cover;">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h1 class="display-1 text-white mt-n3 mb-md-4" id="headerMain">HUBERT&nbsp;<span
+                            id="headerSub">&</span>&nbsp;&nbsp;KLARISSE</h1>
+                    <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
+                        <h1 class="text-uppercase text-white m-0" style="letter-spacing: 2px;" id="tabTitle">
+                            October&nbsp;&nbsp;10&nbsp;&nbsp;2025</h1>
+                    </div>
+                    <button type="button" class="btn-play mx-auto" onclick="toggleSound()">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar (sticky bottom) -->
+    <div class="w3-bottom w3-hide-small">
+        <div id="navBar" class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+            <a href="#home" class="w3-bar-item w3-button">Home</a>
+            <a href="#story" class="w3-bar-item w3-button">Our Story</a>
+            <a href="#wedding" class="w3-bar-item w3-button">Wedding</a>
+            <a href="#rsvp" class="w3-bar-item w3-button w3-hover-black">RSVP</a>
+        </div>
+    </div>
+
+    <!-- Story Start -->
+    <div class="container-fluid py-5" id="story">
+        <div class="section-title position-relative text-center">
+            <h1 id="tabTitle" class="display-4">Our Love Story</h1>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="container timeline position-relative p-0">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <img class="img-fluid mr-md-3" src="image/header_img.jpg" alt="">
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                        <h4 id="headers" class="mb-2 w3-xlarge">Once Upon a Time...</h4>
+                        <!-- <p class="text-uppercase mb-2">01 Jan 2050</p> -->
+                        <p id="bodyFont" class="m-0">In the enchanting land of the Philippines, nestled within the walls
+                            of a
+                            prestigious academy known as UERM College of Medicine, fate began to weave a magical tale.
+                            It was 2013 when Princess Klarisse, a determined young woman with dreams as boundless as the
+                            ocean, set foot in the realm of medicine. At the same time, a charming and steadfast Prince
+                            Hubert embarked on his own journey in the very same school and class. Though they had spent
+                            their childhoods in the same faraway kingdom called the United States of America, their
+                            paths had never crossed -until now.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                        <h4 id="headers" class="mb-2 w3-xlarge">The First Spark</h4>
+                        <!-- <p class="text-uppercase mb-2">01 Jan 2050</p> -->
+                        <p id="bodyFont" class="m-0">During the first week of medical school, outside the anatomy
+                            building, their eyes
+                            met for the first time. Surrounded by mutual friends, they exchanged smiles and laughter,
+                            unaware of the invisible strings tying their hearts together. Little did Princess Klarisse
+                            know, Prince Hubert had already admired her from afar, having discovered her picture in
+                            their batch’s Facebook group. And what the prince didn’t realize was that, at that very
+                            first encounter, the princess, too, had taken notice of him -curious about the enigmatic boy
+                            who shared a similar origin.
+                            </br></br>
+                            By the end of their first week, their connection grew in subtle, unspoken ways. They joined
+                            their friends at a local tavern, where their laughter filled the air, and sparks began to
+                            fly. Yet, for all its potential, the timing was not yet right.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <img class="img-fluid ml-md-3" src="image/header_img.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <img class="img-fluid mr-md-3" src="image/header_img.jpg" alt="">
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                        <h4 id="headers" class="mb-2 w3-xlarge">Trials and Triumphs</h4>
+                        <!-- <p class="text-uppercase mb-2">01 Jan 2050</p> -->
+                        <p id="bodyFont" class="m-0">Amidst the grueling challenges of medical school, the prince and
+                            princess found
+                            solace in their growing friendship. When Princess Klarisse faced her first Biochemistry
+                            quiz, overwhelmed and unsure, Prince Hubert stepped in as her knight in shining armor. With
+                            encouragement and support, he reminded her that even in the most daunting moments, she was
+                            never alone. Their bond deepened, yet romance remained elusive.
+                            </br></br>
+                            One fateful day, just before an exam, Princess Klarisse was so engrossed in reviewing her
+                            notes that she failed to notice a speeding jeepney heading her way as she crossed the
+                            street. Out of nowhere, Prince Hubert appeared, pulling her back to safety in the nick of
+                            time. Breathless and shaken, Princess Klarisse looked up at him as he steadied her. "You
+                            need to be more careful," he said, his concern written all over his face. It was a moment
+                            she would never forget -a reminder of how he always seemed to be there when she needed him
+                            most.
+                            </br></br>
+                            As the first year of school passed, both endured heartbreak in their separate lives, mending
+                            their hearts one piece at a time. By their second year, their paths began to intertwine more
+                            closely, brought together by shared experiences and a mutual circle of friends. Prince
+                            Hubert’s kindness and persistence became unshakable. Whether suggesting a dinner date, a
+                            study session, or a Robin Williams movie marathon (knowing her childhood admiration for the
+                            actor), he remained steadfast in his efforts to win the princess over.
+                            </br></br>
+                            Each time, Princess Klarisse gently declined. When friends asked her why, she would reply,
+                            “I know we’d get along really well, but I’m scared. He seems like the type to break my
+                            heart.” She guarded her heart fiercely, determined to avoid further heartbreak. Yet, Prince
+                            Hubert never wavered, his patience and quiet determination was a testament to his
+                            intentions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                        <h4 id="headers" class="mb-2 w3-xlarge">The Boracay Adventure</h4>
+                        <!-- <p class="text-uppercase mb-2">01 Jan 2050</p> -->
+                        <p id="bodyFont" class="m-0">In October 2014, their friend group planned a trip to the pristine
+                            shores of
+                            Boracay. During the first two days, Princess Klarisse quietly observed Prince Hubert,
+                            intrigued by the boy who had persistently asked her out on multiple occasions -36 times on
+                            Messenger alone, to be exact (though the exact number of phone text messages and in person
+                            invitations remain in disagreement). Beneath his confident demeanor, she glimpsed the kind
+                            and genuine man he truly was.
+                            </br></br>
+                            On the second night, under a starlit sky by the ocean’s edge, the two found themselves alone
+                            for the first time, talking freely. Dreams, favorite books, movies, and songs poured forth,
+                            creating a connection neither could deny. It was then that Princess Klarisse, her curiosity
+                            and trust overcoming her fears, finally relented.
+                            </br></br>
+                            "Fine, I’ll let you take me out on that date," she declared, "but just this once." That
+                            magical first date, filled with parasailing, helmet diving, jet skiing, and a romantic
+                            dinner, marked the beginning of a love story that would never be confined to Boracay.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <img class="img-fluid ml-md-3" src="image/header_img.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <img class="img-fluid mr-md-3" src="image/header_img.jpg" alt="">
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                        <h4 id="headers" class="mb-2 w3-xlarge">A Love That Grew</h4>
+                        <!-- <p class="text-uppercase mb-2">01 Jan 2050</p> -->
+                        <p id="bodyFont" class="m-0">From that day forward, their story unfolded like the most beautiful
+                            of fairy
+                            tales. They shared study dates, adventures across continents, and quiet moments that spoke
+                            volumes. By October 27, 2015, about a year after their magical Boracay date, Prince Hubert
+                            asked Princess Klarisse to be his official partner. From then on, their love knew no bounds.
+                            </br></br>
+                            Their relationship blossomed, surviving the challenges of medical school, long-distance
+                            separations, and the rigors of life. Together, they traveled the world, supported one
+                            another through triumphs and trials, and became each other’s best friend.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                        <h4 id="headers" class="mb-2 w3-xlarge">Happily Ever After</h4>
+                        <!-- <p class="text-uppercase mb-2">01 Jan 2050</p> -->
+                        <p id="bodyFont" class="m-0">On November 12, 2023, under a sky illuminated by music and lights
+                            at a festival
+                            in Orlando, FL, Prince Hubert asked Princess Klarisse to join him in the next chapter of
+                            their fairy tale. With The Chainsmokers serenading them and stars witnessing their moment,
+                            he knelt on one knee and proposed to the princess under the Electric Daisy sky.
+                            </br></br>
+                            Now, on October 25, 2025, after over a decade of shared memories, they will say “I do” at
+                            Paraiso De Avedad in San Pablo City, Laguna, surrounded by loved ones. Their fairy tale
+                            continues, an enduring testament to love, patience, and the magic of destiny -a happily ever
+                            after without “The End.”
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <img class="img-fluid ml-md-3" src="image/header_img.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Story End -->
+
+    <!-- Wedding information -->
+    <div class="w3-container w3-padding-64 w3-center" id="wedding">
+        <div class="section-title position-relative text-center">
+            <h1 id="tabTitle" class="display-4">Wedding Details</h1>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="w3-content">
+            <img class="w3-round-large" src="./image/venue_img.png" style="width:100%;">
+            <div class="w3-center">
+                <p id="bodyFont" class="w3-large">
+                    ceremony and reception at</br>
+                    <span id="headers" class="w3-xxxlarge">
+                        <a href="https://www.facebook.com/paraisodeavedad?mibextid=LQQJ4d" target="_blank">
+                            Paraiso De Avedad
+                        </a>
+                    </span> </br>
+                    San Pablo City, Laguna
+                </p>
+                <p class="w3-xlarge">
+                    <button
+                        onclick="window.open('https://www.google.com/maps/place/Paraiso+de+Avedad/@14.0158912,121.3378215,17z/data=!3m1!4b1!4m6!3m5!1s0x33bd439b36852c9f:0x7d0c84c08f7585b4!8m2!3d14.015886!4d121.3403964!16s%2Fg%2F11b7cmjgk5?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D');"
+                        class="w3-button w3-round w3-dark-grey w3-opacity w3-hover-opacity-off"
+                        style="padding:8px 60px">Go to Venue</button>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- RSVP section -->
+    <div class="w3-container w3-padding-64 w3-center w3-wide" id="rsvp">
+        <p class="w3-xlarge">
+            <button onclick="document.getElementById('id01').style.display='block'"
+                class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
+        </p>
+    </div>
+    <div class="w3-container w3-padding-32 w3-center w3-wide">
+    </div>
+
+    <!-- RSVP modal -->
+    <!-- <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
+            <div class="w3-container w3-white w3-center">
+                <h1 class="w3-wide">CAN YOU COME?</h1>
+                <p>We really hope you can make it.</p>
+                <form>
+                    <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
+                </form>
+                <p><i>Sincerely, John & Jane</i></p>
+                <div class="w3-row">
+
+                    <div class="w3-half">
+                        <button onclick="document.getElementById('id01').style.display='none'" type="button"
+                            class="w3-button w3-block w3-red">Can't come</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+</body>
+
+</html>
