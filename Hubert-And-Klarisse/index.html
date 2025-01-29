@@ -3,14 +3,11 @@
 
 <head>
     <title>HUBERT & KLARISSE</title>
-
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
     <link href="css/style.css" rel="stylesheet">
 
     <style>
@@ -111,85 +108,18 @@
             text-decoration: none;
         }
 
-        /* Container for the sound icon */
-        .sound-icon {
-            width: 50px;
-            height: 50px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        /* Speaker box */
-        .speaker {
-            width: 15px;
-            height: 20px;
-            background: #E3D7D1;
-            /* Goldish color */
-            position: absolute;
-            left: 10px;
-            top: 15px;
-            clip-path: polygon(0 0, 75% 25%, 75% 75%, 0 100%);
-        }
-
-        /* Sound waves */
-        .wave {
-            position: absolute;
-            top: 50%;
-            left: 30px;
-            width: 10px;
-            height: 10px;
-            border: 2px solid #E3D7D1;
-            border-radius: 50%;
-            transform: translateY(-50%);
-            opacity: 1;
-            animation: wave 1.5s infinite ease-in-out;
-        }
-
-        /* Wave sizes */
-        .wave:nth-child(2) {
-            left: 40px;
-            width: 15px;
-            height: 15px;
-            animation-delay: 0.2s;
-        }
-
-        .wave:nth-child(3) {
-            left: 55px;
-            width: 20px;
-            height: 20px;
-            animation-delay: 0.4s;
-        }
-
-        /* Wave animation */
-        @keyframes wave {
-            0% {
-                opacity: 1;
-                transform: translateY(-50%) scale(0.8);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(-50%) scale(1.5);
-            }
-        }
-
-        /* Modal styles */
         .modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            /* Semi-transparent black */
+            background-color: rgba(0, 0, 0, 1);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
             visibility: hidden;
-            /* Hidden by default */
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
         }
 
         .modal.show {
@@ -199,7 +129,7 @@
 
         .modal-content {
             background-color: #ffffff;
-            padding: 20px;
+            padding: 45px;
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -214,7 +144,7 @@
         }
 
         .modal-content button {
-            background-color: #d4a051;
+            background-color: #C1A37F;
             /* Gold color */
             color: #ffffff;
             padding: 10px 20px;
@@ -235,7 +165,7 @@
             }
         }
 
-        @media (min-width: 601px) and (max-width: 992px){
+        @media (min-width: 601px) and (max-width: 992px) {
             #navBar a {
                 font-size: 24pt;
             }
@@ -253,54 +183,16 @@
     <!-- Modal -->
     <div class="modal" id="invitationModal">
         <div class="modal-content">
-            <h1 class="invitation w3-xxxlarge">You're Invited</h1>
-            <button class="invitation w3-xlarge" id="openInvitation">Open Invitation</button>
+            <h1 class="invitation w3-xxlarge">You're Invited</h1>
+            <button class="invitation w3-large" id="openInvitation">Open Invitation</button>
         </div>
     </div>
 
     <!-- Background Music -->
     <audio id="backgroundMusic" loop>
         <source src="audio/next-to-me-by-rufus-du-sol.mp3" type="audio/mpeg">
-        <!-- <source src="audio/next-to-you.mp3" type="audio/mpeg"> -->
         Your browser does not support the audio element.
     </audio>
-
-    <!-- JavaScript -->
-    <script>
-        // Elements
-        const modal = document.getElementById('invitationModal');
-        const openInvitationButton = document.getElementById('openInvitation');
-        const audio = document.getElementById('backgroundMusic');
-
-        // Show the modal on page load
-        window.addEventListener('load', () => {
-            modal.classList.add('show');
-        });
-
-        // Close the modal and play music
-        openInvitationButton.addEventListener('click', () => {
-            modal.classList.remove('show');
-            audio.play(); // Play the background music
-            document.body.style.overflow = 'auto'; // Allow scrolling after modal is closed
-        });
-
-        let isPlaying = true;
-
-        function toggleSound() {
-            if (isPlaying) {
-                audio.pause();
-            } else {
-                audio.play();
-            }
-            isPlaying = !isPlaying;
-        }
-    </script>
-    <div class="modal" id="invitationModal">
-        <div class="modal-content">
-            <h1>You're Invited</h1>
-            <button id="openInvitation">Open Invitation</button>
-        </div>
-    </div>
 
     <!-- Header / Home-->
     <div class="container-fluid p-0 mb-5 pb-5" id="home">
@@ -312,7 +204,7 @@
                             id="headerSub">&</span>&nbsp;&nbsp;KLARISSE</h1>
                     <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
                         <h1 class="text-uppercase text-white m-0" style="letter-spacing: 2px;" id="tabTitle">
-                            October&nbsp;&nbsp;10&nbsp;&nbsp;2025</h1>
+                            October&nbsp;&nbsp;25&nbsp;&nbsp;2025</h1>
                     </div>
                     <button type="button" class="btn-play mx-auto" onclick="toggleSound()">
                         <span></span>
@@ -332,7 +224,7 @@
         </div>
     </div>
 
-    <!-- Story Start -->
+    <!-- Story -->
     <div class="container-fluid py-5" id="story">
         <div class="section-title position-relative text-center">
             <h1 id="tabTitle" class="display-4">Our Love Story</h1>
@@ -495,9 +387,8 @@
             </div>
         </div>
     </div>
-    <!-- Story End -->
 
-    <!-- Wedding information -->
+    <!-- Wedding -->
     <div class="w3-container w3-padding-64 w3-center" id="wedding">
         <div class="section-title position-relative text-center">
             <h1 id="tabTitle" class="display-4">Wedding Details</h1>
@@ -537,10 +428,37 @@
     </div>
 
     <!-- RSVP modal -->
-    <!-- <div id="id01" class="w3-modal">
+    <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
             <div class="w3-container w3-white w3-center">
-                <h1 class="w3-wide">CAN YOU COME?</h1>
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSf7sfn44NF3Ney6vaTakCTlGoWu9WoD7VpzSJw3boyJPFVDRA/formResponse" method="post" target="_blank">
+                    <!-- Replace 'entry.xxxxxx' with the actual IDs from your Google Form -->
+                    <label>Can you attend:</label>
+                    <input type="radio" name="entry.1538152977" value="Yes, I'll be there.">Yes
+                    <input type="radio" name="entry.1538152977" value="Sorry, I can't make it.">No
+
+                    <label>Guest Name:</label>
+                    <input type="text" id="name" name="entry.6352084" placeholder="Enter your name">
+
+                    <label>Contact Number:</label>
+                    <input type="text" id="contact" name="entry.74263826" placeholder="Enter your contact number"
+                        required>
+
+                    <label>Email Address:</label>
+                    <input type="email" id="email" name="entry.530661557" placeholder="Enter your email address"
+                        required>
+
+                    <label>Message:</label>
+                    <textarea id="message" name="entry.1740200544" rows="5" placeholder="Enter your message"
+                        required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="w3-half">
+                    <button onclick="document.getElementById('id01').style.display='none'" type="button"
+                        class="w3-button w3-block w3-red">Can't come</button>
+                </div>
+                <!-- <h1 class="w3-wide">CAN YOU COME?</h1>
                 <p>We really hope you can make it.</p>
                 <form>
                     <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
@@ -552,11 +470,37 @@
                         <button onclick="document.getElementById('id01').style.display='none'" type="button"
                             class="w3-button w3-block w3-red">Can't come</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-    </div> -->
+    </div>
 
+    <script>
+        const modal = document.getElementById('invitationModal');
+        const openInvitationButton = document.getElementById('openInvitation');
+        const audio = document.getElementById('backgroundMusic');
+
+        window.addEventListener('load', () => {
+            modal.classList.add('show');
+        });
+
+        openInvitationButton.addEventListener('click', () => {
+            modal.classList.remove('show');
+            audio.play();
+            document.body.style.overflow = 'auto';
+        });
+
+        let isPlaying = true;
+
+        function toggleSound() {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.play();
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
 </body>
 
 </html>
