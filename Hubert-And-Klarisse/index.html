@@ -270,62 +270,24 @@
         </div>
     </div>
 
-    <!-- RSVP section -->
-    <div class="w3-container w3-padding-64 w3-center w3-wide" id="rsvp">
-        <p class="w3-xlarge">
-            <button onclick="document.getElementById('id01').style.display='block'"
-                class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
-        </p>
+    <!-- RSVP -->
+    <div class="w3-container w3-padding-64 w3-center" id="rsvp">
+        <div class="section-title position-relative text-center">
+            <h1 id="tabTitle" class="display-4">RSVP</h1>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSf7sfn44NF3Ney6vaTakCTlGoWu9WoD7VpzSJw3boyJPFVDRA/viewform?embedded=true"
+            width="99%" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        <div class="position-relative text-center">
+            <h1 id="tabTitle" class="display-4">With hearts full of love, we can't wait to celebrate with you!</h1>
+        </div>
     </div>
-    <div class="w3-container w3-padding-32 w3-center w3-wide">
-    </div>
 
-    <!-- RSVP modal -->
-    <div id="id01" class="w3-modal">
-        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
-            <div class="w3-container w3-white w3-center">
-                <form
-                    action="https://docs.google.com/forms/d/e/1FAIpQLSf7sfn44NF3Ney6vaTakCTlGoWu9WoD7VpzSJw3boyJPFVDRA/formResponse"
-                    method="post" target="_blank">
-                    <!-- Replace 'entry.xxxxxx' with the actual IDs from your Google Form -->
-                    <label>Can you attend:</label>
-                    <input type="radio" name="entry.1538152977" value="Yes, I'll be there.">Yes
-                    <input type="radio" name="entry.1538152977" value="Sorry, I can't make it.">No
-
-                    <label>Guest Name:</label>
-                    <input type="text" id="name" name="entry.6352084" placeholder="Enter your name">
-
-                    <label>Contact Number:</label>
-                    <input type="text" id="contact" name="entry.74263826" placeholder="Enter your contact number"
-                        required>
-
-                    <label>Email Address:</label>
-                    <input type="email" id="email" name="emailAddress" placeholder="Enter your email address" required>
-
-                    <label>Message:</label>
-                    <textarea id="message" name="entry.1740200544" rows="5" placeholder="Enter your message"
-                        required></textarea>
-
-                    <button type="submit">Submit</button>
-                </form>
-                <div class="w3-half">
-                    <button onclick="document.getElementById('id01').style.display='none'" type="button"
-                        class="w3-button w3-block w3-red">Can't come</button>
-                </div>
-                <!-- <h1 class="w3-wide">CAN YOU COME?</h1>
-                <p>We really hope you can make it.</p>
-                <form>
-                    <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
-                </form>
-                <p><i>Sincerely, John & Jane</i></p>
-                <div class="w3-row">
-
-                    <div class="w3-half">
-                        <button onclick="document.getElementById('id01').style.display='none'" type="button"
-                            class="w3-button w3-block w3-red">Can't come</button>
-                    </div>
-                </div> -->
-            </div>
+    <div class="position-relative" style="height: 300px;">
+        <div class=" d-flex flex-column align-items-center justify-content-center">
+            <h1 class="display-1 mt-n3 mb-md-4" id="headerMain">HUBERT&nbsp;<span
+                    id="headerSub">&</span>&nbsp;&nbsp;KLARISSE</h1>
         </div>
     </div>
 

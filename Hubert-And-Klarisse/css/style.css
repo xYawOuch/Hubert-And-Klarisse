@@ -147,6 +147,10 @@ a {
 }
 
 @media (max-width:380px) {
+    iframe {
+        height: 1500px;
+    }
+
     #navBar a {
         font-size: 18pt;
     }
@@ -173,6 +177,10 @@ a {
 }
 
 @media (min-width: 381px) and (max-width:600px) {
+    iframe {
+        height: 1450px;
+    }
+
     #navBar a {
         font-size: 18pt;
     }
@@ -199,6 +207,10 @@ a {
 }
 
 @media (min-width: 601px) and (max-width: 992px) {
+    iframe {
+        height: 1400px;
+    }
+
     #navBar a {
         font-size: 24pt;
     }
@@ -225,6 +237,10 @@ a {
 }
 
 @media (min-width:993px) {
+    iframe {
+        height: 1350px;
+    }
+
     #navBar a {
         font-size: 32pt;
     }
