@@ -8,175 +8,8 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style-min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
-    <style>
-        @font-face {
-            font-family: 'Stolen Love';
-            src: url('./font/stolen_love.otf') format('opentype');
-            font-display: swap;
-        }
-
-        #headerMain {
-            font-family: 'Stolen Love', Arial, sans-serif;
-        }
-
-        #tabTitle {
-            font-family: 'Stolen Love', Arial, sans-serif;
-        }
-
-        @font-face {
-            font-family: 'Kaewpet';
-            src: url('./font/kaewpet.ttf') format('truetype');
-            font-display: swap;
-        }
-
-        #headerSub {
-            font-family: 'Kaewpet', Arial, sans-serif;
-            position: relative;
-            top: -5pt;
-        }
-
-        @font-face {
-            font-family: 'Niconne Regular';
-            src: url('./font/niconne_regular.ttf') format('truetype');
-            font-display: swap;
-        }
-
-        #headerDate {
-            font-family: 'Niconne Regular', Arial, sans-serif;
-        }
-
-        #headers {
-            font-family: 'Niconne Regular', Arial, sans-serif;
-        }
-
-        @font-face {
-            font-family: 'Moon Time';
-            src: url('./font/moon_time.ttf') format('truetype');
-            font-display: swap;
-        }
-
-        #navBar a {
-            font-family: 'Moon Time', Arial, sans-serif;
-            font-size: 24pt;
-            width: 25%;
-            font-weight: bold;
-        }
-
-        @font-face {
-            font-family: 'Alice';
-            src: url('./font/alice.ttf') format('truetype');
-            font-display: swap;
-        }
-
-        #bodyFont {
-            font-family: 'Alice', Arial, sans-serif;
-        }
-
-        .invitation {
-            font-family: 'Alice', Arial, sans-serif;
-        }
-
-        @font-face {
-            font-family: 'Eyesome Script';
-            src: url('./font/eyesome_script.otf')
-        }
-
-        body,
-        html {
-            height: 100%;
-            background-color: #E3D7D1
-        }
-
-        .bgimg,
-        .bgimg2 {
-            min-height: 100%;
-            background-position: center;
-            background-size: cover;
-        }
-
-        .bgimg {
-            background-image: url("./image/header_img.jpg")
-        }
-
-        .bgimg2 {
-            background-image: url("https://www.w3schools.com/w3images/flowers.jpg")
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            visibility: hidden;
-        }
-
-        .modal.show {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            padding: 45px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            width: 90%;
-        }
-
-        .modal-content h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
-
-        .modal-content button {
-            background-color: #C1A37F;
-            /* Gold color */
-            color: #ffffff;
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .modal-content button:hover {
-            background-color: #b38341;
-        }
-
-        @media (max-width:600px) {
-            #navBar a {
-                font-size: 18pt;
-            }
-        }
-
-        @media (min-width: 601px) and (max-width: 992px) {
-            #navBar a {
-                font-size: 24pt;
-            }
-        }
-
-        @media (min-width:993px) {
-            #navBar a {
-                font-size: 32pt;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -394,6 +227,26 @@
             <h1 id="tabTitle" class="display-4">Wedding Details</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
+        <div class="center-container">
+            <div id="bodyFont" class="countdown">
+                <div class="time-box">
+                    <span style="border-bottom: 1px solid;" id="days">00</span>
+                    <p>DAYS</p>
+                </div>
+                <div class="time-box">
+                    <span style="border-bottom: 1px solid;" id="hours">00</span>
+                    <p>HOURS</p>
+                </div>
+                <div class="time-box">
+                    <span style="border-bottom: 1px solid;" id="minutes">00</span>
+                    <p>MINUTES</p>
+                </div>
+                <div class="time-box">
+                    <span style="border-bottom: 1px solid;" id="seconds">00</span>
+                    <p>SECONDS</p>
+                </div>
+            </div>
+        </div>
         <div class="w3-content">
             <img class="w3-round-large" src="./image/venue_img.png" style="width:100%;">
             <div class="w3-center">
@@ -431,7 +284,9 @@
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
             <div class="w3-container w3-white w3-center">
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSf7sfn44NF3Ney6vaTakCTlGoWu9WoD7VpzSJw3boyJPFVDRA/formResponse" method="post" target="_blank">
+                <form
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSf7sfn44NF3Ney6vaTakCTlGoWu9WoD7VpzSJw3boyJPFVDRA/formResponse"
+                    method="post" target="_blank">
                     <!-- Replace 'entry.xxxxxx' with the actual IDs from your Google Form -->
                     <label>Can you attend:</label>
                     <input type="radio" name="entry.1538152977" value="Yes, I'll be there.">Yes
@@ -445,8 +300,7 @@
                         required>
 
                     <label>Email Address:</label>
-                    <input type="email" id="email" name="emailAddress" placeholder="Enter your email address"
-                        required>
+                    <input type="email" id="email" name="emailAddress" placeholder="Enter your email address" required>
 
                     <label>Message:</label>
                     <textarea id="message" name="entry.1740200544" rows="5" placeholder="Enter your message"
@@ -475,32 +329,7 @@
         </div>
     </div>
 
-    <script>
-        const modal = document.getElementById('invitationModal');
-        const openInvitationButton = document.getElementById('openInvitation');
-        const audio = document.getElementById('backgroundMusic');
-
-        window.addEventListener('load', () => {
-            modal.classList.add('show');
-        });
-
-        openInvitationButton.addEventListener('click', () => {
-            modal.classList.remove('show');
-            audio.play();
-            document.body.style.overflow = 'auto';
-        });
-
-        let isPlaying = true;
-
-        function toggleSound() {
-            if (isPlaying) {
-                audio.pause();
-            } else {
-                audio.play();
-            }
-            isPlaying = !isPlaying;
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
