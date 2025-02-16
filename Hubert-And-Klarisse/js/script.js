@@ -1,3 +1,13 @@
+function toggleMenu() {
+    let menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+}
+document.querySelectorAll(".nav-links a").forEach(item => {
+    item.addEventListener("click", () => {
+        document.getElementById("menu").classList.remove("active");
+    });
+});
+
 const modal = document.getElementById('invitationModal');
 const openInvitationButton = document.getElementById('openInvitation');
 const audio = document.getElementById('backgroundMusic');

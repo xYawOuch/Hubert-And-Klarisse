@@ -48,14 +48,31 @@
     </div>
 
     <!-- Navbar (sticky bottom) -->
-    <div class="w3-bottom w3-show">
+    <nav id="navBar" class="navbar">
+        <div class="logo"></div>
+        <button class="menu-icon" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#wedding">Wedding</a></li>
+            <li><a href="#sponsor">Sponsors</a></li>
+            <li><a href="#travel">Travel Info</a></li>
+            <li><a href="#supplier">Suppliers</a></li>
+            <li><a href="#">Contact</a></li>
+
+
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- <div class="w3-bottom w3-show">
         <div id="navBar" class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
             <a href="#home" class="w3-bar-item w3-button">Home</a>
             <a href="#story" class="w3-bar-item w3-button">Story</a>
             <a href="#wedding" class="w3-bar-item w3-button">Wedding</a>
             <a href="#rsvp" class="w3-bar-item w3-button">RSVP</a>
         </div>
-    </div>
+    </div> -->
 
     <!-- Story -->
     <div class="container-fluid py-5" id="story">
@@ -241,10 +258,10 @@
                     <span style="border-bottom: 1px solid;" id="minutes">00</span>
                     <p>MINUTES</p>
                 </div>
-                <div class="time-box">
+                <!-- <div class="time-box">
                     <span style="border-bottom: 1px solid;" id="seconds">00</span>
                     <p>SECONDS</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="w3-content">
@@ -263,9 +280,257 @@
                     <button
                         onclick="window.open('https://www.google.com/maps/place/Paraiso+de+Avedad/@14.0158912,121.3378215,17z/data=!3m1!4b1!4m6!3m5!1s0x33bd439b36852c9f:0x7d0c84c08f7585b4!8m2!3d14.015886!4d121.3403964!16s%2Fg%2F11b7cmjgk5?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D');"
                         class="w3-button w3-round w3-dark-grey w3-opacity w3-hover-opacity-off"
-                        style="padding:8px 60px">Go to Venue</button>
+                        style="padding:8px 60px">Venue via Maps</button>
+                    <button
+                        onclick="window.open('https://ul.waze.com/ul?venue_id=79495308.795215226.13283386&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location');"
+                        class="w3-button w3-round w3-dark-grey w3-opacity w3-hover-opacity-off"
+                        style="padding:8px 60px">Venue via Waze</button>
                 </p>
+            </div>
+            </br>
+            <img class="w3-round-large" src="./image/kids_img.png" style="width:100%;">
+            <div class="w3-center">
+                <p id="headers" class="w3-xxxlarge" style="color: #000;">Kids Zone</p>
+                <p id="bodyFont" class="w3-large">
+                    We are excited to welcome your little ones to the celebration and want to ensure they have a magical
+                    experience of their own! Our wedding will feature a special Kids Zone, designed with fun and safety
+                    in mind. While the adults enjoy the cocktail hour and reception, the children will have their own
+                    dedicated area to play, eat, and create memories.
+                    </br></br>
+                    The Kids Zone will feature a charming treehouse and a playground, offering plenty of space for the
+                    children to explore and enjoy games and activities. There will be fun, age-appropriate games to keep
+                    them entertained throughout the event.
+                    </br></br>
+                    Children age 13 and under will also have their own seating and dining area, where they will enjoy
+                    their meals in a fun and safe environment. <u>Please take note that the children will not be seated
+                        with their parents during the reception</u>. Their food will be served at designated times, so
+                    they can
+                    eat alongside their friends in their own space.
+                    </br></br>
+                    To make sure the Kids Zone runs smoothly, we will be providing nannies to supervise the children,
+                    ensuring they are well taken care of. <u>If you prefer to bring your own nanny, please let the bride
+                        and groom know in advance, and we'll make arrangements accordingly</u>.
+                    </br></br>
+                    Each child will also have a kid-friendly menu tailored to their tastes. Please make sure to note any
+                    dietary restrictions and allergies when confirming your RSVP, so we can accommodate all needs and
+                    ensure the children have a safe and enjoyable meal.
+                    </br></br>
+                    We hope the kids enjoy their time at the Kids Zone, allowing the adults to relax and enjoy the
+                    festivities. Thank you for helping us create an unforgettable celebration for everyone!
+                </p>
+            </div>
+            </br></br>
+            <div class="section-title position-relative text-center">
+                <h1 id="tabTitle" class="display-4">The Parents</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            <div class="container timeline position-relative p-0">
+                <div class="weddingInfo">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Mario Golingan, Engr.</h4>
+                                <p id="bodyFont" class="m-0 text-center">Father of the Groom</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Ruben Espirito Santo, Engr.
+                                </h4>
+                                <p id="bodyFont" class="m-0 text-center">Father of the Bride</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Amelia Perez, RN</h4>
+                                <p id="bodyFont" class="m-0 text-center">Mother of the Groom</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Annalyne Avendanio, MD</h4>
+                                <p id="bodyFont" class="m-0 text-center">Mother of the Bride</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="section-title position-relative text-center">
+                <h1 id="tabTitle" class="display-4">Siblings</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            <div class="container timeline position-relative p-0">
+                <div class="weddingInfo">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Adrian Golingan, Engr.</h4>
+                                <p id="bodyFont" class="m-0 text-center">Brother of the Groom</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Noel Nathan Avendanio</h4>
+                                <p id="bodyFont" class="m-0 text-center">Brother of the Bride</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title position-relative text-center">
+                <h1 id="tabTitle" class="display-4">The Bridal Party</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            <div class="container timeline position-relative p-0">
+                <div class="weddingInfo">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Adrian Golingan</h4>
+                                <p id="bodyFont" class="m-0 text-center">Best Man</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Maureen Soriano</h4>
+                                <p id="bodyFont" class="m-0 text-center">Matron of Honor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Brandon Young</h4>
+                                <p id="bodyFont" class="m-0 text-center">Best Man</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Yna Joy Espiritu Santo</h4>
+                                <p id="bodyFont" class="m-0 text-center">Maid of Honor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <h4 id="bodyFont" class="mb-2 w3-xlarge text-center">Bridesmaids</h4>
+                                <p id="weddingDetails" class="m-0 text-center">
+                                    Timothy Joseph Gaffud</br>
+                                    Mico Pagulayan-Sy</br>
+                                    Randy Figueroa</br>
+                                    Noel Nathan Avendano</br>
+                                    Kristofer Lopez</br>
+                                    Jonjon Tanawan</br>
+                                    Romar Dalmacio
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <h4 id="bodyFont" class="mb-2 w3-xlarge text-center">Bridesmaids</h4>
+                                <p id="weddingDetails" class="m-0 text-center">
+                                    Lady Ann Mendoza</br>
+                                    Kirstie Ida May Romero</br>
+                                    Ivy Philline C. Jimenez</br>
+                                    Jescille Espiritu Santo</br>
+                                    Miri Kim</br>
+                                    Isabel Cupino</br>
+                                    Kimberly Segovia</br>
+                                    Coreen Tang How</br>
+                                    Andrea Dalmacio</br>
+                                    Bienvee Tristaine Aceremo</br>
+                                    Zyra Anne Alvarez</br>
+                                    Janh Juliene Gaffud
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <h4 id="bodyFont" class="mb-2 w3-xlarge text-center">Ring Bearers</h4>
+                                <p id="weddingDetails" class="m-0 text-center">
+                                    Yedaiah Coen C. Jimenez</br>
+                                    Gab Romero</br>
+                                    <span style="color: red">Luke Ortiz?</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <h4 id="bodyFont" class="mb-2 w3-xlarge text-center">Flower Girls</h4>
+                                <p id="weddingDetails" class="m-0 text-center">
+                                    Francia Miracle Golingan</br>
+                                    Maia Golingan</br>
+                                    Treycie Audé Buen</br>
+                                    Tali</br>
+                                    Neina
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sponsors section-title position-relative text-center" id="sponsor">
+                <h1 id="tabTitle" class="display-4">Primary Sponsors</h1>
+            </div>
+            <div class="container timeline position-relative p-0">
+                <div class="weddingInfo">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <p id="weddingDetails" class="m-0 text-center w3-large">
+                                    1. Jade Del Mundo</br>
+                                    2. Rudy Jarabata, MD</br>
+                                    3. <span style="color: red">TJ Del Mundo?</span></br>
+                                    4. Gov. Marvi Mariano
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <p id="weddingDetails" class="m-0 text-center w3-large">
+                                    1. Ma. Diana Ortiz, PhD</br>
+                                    2. Margie ES Soriano</br>
+                                    3. <span style="color: red">Elizabeth Micale / Tita Alma</span></br>
+                                    4. Erma ES Gerolaga
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sponsors section-title position-relative text-center">
+                <h1 id="tabTitle" class="display-4">Secondary Sponsors</h1>
+            </div>
+            <div class="container timeline position-relative p-0">
+                <div class="weddingInfo">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-right">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                                <p id="weddingDetails" class="m-0 text-center w3-large">
+                                    1. Joel Capote, Sgt</br>
+                                    2. Manong Randy</br>
+                                    3. Kuya Paulie
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-left">
+                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                                <p id="weddingDetails" class="m-0 text-center w3-large">
+                                    1. Edna Capote</br>
+                                    2. Alma Ginhawa</br>
+                                    3. Tita May
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
