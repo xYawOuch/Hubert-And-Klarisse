@@ -27,6 +27,24 @@
         Your browser does not support the audio element.
     </audio>
 
+    <!-- Navbar (sticky bottom) -->
+    <nav id="navBar" class="navbar">
+        <div class="logo"></div>
+        <button class="menu-icon" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#wedding">Wedding</a></li>
+            <li><a href="#sponsor">Sponsors</a></li>
+            <li><a href="#travel">Travel Info</a></li>
+            <li><a href="#supplier">Suppliers</a></li>
+            <li><a href="#">Contact</a></li>
+
+
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
     <!-- Header / Home-->
     <div class="container-fluid p-0 mb-5 pb-5" id="home">
         <div class="carousel-inner">
@@ -46,33 +64,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Navbar (sticky bottom) -->
-    <nav id="navBar" class="navbar">
-        <div class="logo"></div>
-        <button class="menu-icon" onclick="toggleMenu()">☰</button>
-        <ul class="nav-links" id="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#story">Story</a></li>
-            <li><a href="#wedding">Wedding</a></li>
-            <li><a href="#sponsor">Sponsors</a></li>
-            <li><a href="#travel">Travel Info</a></li>
-            <li><a href="#supplier">Suppliers</a></li>
-            <li><a href="#">Contact</a></li>
-
-
-            <li><a href="#rsvp">RSVP</a></li>
-        </ul>
-    </nav>
-
-    <!-- <div class="w3-bottom w3-show">
-        <div id="navBar" class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
-            <a href="#home" class="w3-bar-item w3-button">Home</a>
-            <a href="#story" class="w3-bar-item w3-button">Story</a>
-            <a href="#wedding" class="w3-bar-item w3-button">Wedding</a>
-            <a href="#rsvp" class="w3-bar-item w3-button">RSVP</a>
-        </div>
-    </div> -->
 
     <!-- Story -->
     <div class="container-fluid py-5" id="story">
@@ -239,7 +230,7 @@
     </div>
 
     <!-- Wedding -->
-    <div class="w3-container w3-padding-64 w3-center" id="wedding">
+    <div class="container-fluid py-5" id="wedding">
         <div class="section-title position-relative text-center">
             <h1 id="tabTitle" class="display-4">Wedding Details</h1>
             <i class="far fa-heart text-dark"></i>
@@ -330,14 +321,14 @@
                         <div class="col-md-6 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Mario Golingan, Engr.</h4>
-                                <p id="bodyFont" class="m-0 text-center">Father of the Groom</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Father of the Groom</p>
                             </div>
                         </div>
                         <div class="col-md-6 text-center text-md-left">
                             <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Ruben Espirito Santo, Engr.
                                 </h4>
-                                <p id="bodyFont" class="m-0 text-center">Father of the Bride</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Father of the Bride</p>
                             </div>
                         </div>
                     </div>
@@ -345,13 +336,13 @@
                         <div class="col-md-6 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Amelia Perez, RN</h4>
-                                <p id="bodyFont" class="m-0 text-center">Mother of the Groom</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Mother of the Groom</p>
                             </div>
                         </div>
                         <div class="col-md-6 text-center text-md-left">
                             <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Annalyne Avendanio, MD</h4>
-                                <p id="bodyFont" class="m-0 text-center">Mother of the Bride</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Mother of the Bride</p>
                             </div>
                         </div>
                     </div>
@@ -368,13 +359,13 @@
                         <div class="col-md-6 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Adrian Golingan, Engr.</h4>
-                                <p id="bodyFont" class="m-0 text-center">Brother of the Groom</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Brother of the Groom</p>
                             </div>
                         </div>
                         <div class="col-md-6 text-center text-md-left">
                             <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Noel Nathan Avendanio</h4>
-                                <p id="bodyFont" class="m-0 text-center">Brother of the Bride</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Brother of the Bride</p>
                             </div>
                         </div>
                     </div>
@@ -391,33 +382,33 @@
                         <div class="col-md-6 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Adrian Golingan</h4>
-                                <p id="bodyFont" class="m-0 text-center">Best Man</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Best Man</p>
                             </div>
                         </div>
                         <div class="col-md-6 text-center text-md-left">
                             <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Maureen Soriano</h4>
-                                <p id="bodyFont" class="m-0 text-center">Matron of Honor</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Matron of Honor</p>
                             </div>
                         </div>
                         <div class="col-md-6 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Brandon Young</h4>
-                                <p id="bodyFont" class="m-0 text-center">Best Man</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Best Man</p>
                             </div>
                         </div>
                         <div class="col-md-6 text-center text-md-left">
                             <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Yna Joy Espiritu Santo</h4>
-                                <p id="bodyFont" class="m-0 text-center">Maid of Honor</p>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">Maid of Honor</p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                                <h4 id="bodyFont" class="mb-2 w3-xlarge text-center">Bridesmaids</h4>
-                                <p id="weddingDetails" class="m-0 text-center">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Groomsmen</h4>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">
                                     Timothy Joseph Gaffud</br>
                                     Mico Pagulayan-Sy</br>
                                     Randy Figueroa</br>
@@ -430,8 +421,8 @@
                         </div>
                         <div class="col-md-6 text-center text-md-left">
                             <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                                <h4 id="bodyFont" class="mb-2 w3-xlarge text-center">Bridesmaids</h4>
-                                <p id="weddingDetails" class="m-0 text-center">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Bridesmaids</h4>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">
                                     Lady Ann Mendoza</br>
                                     Kirstie Ida May Romero</br>
                                     Ivy Philline C. Jimenez</br>
@@ -451,8 +442,8 @@
                     <div class="row">
                         <div class="col-md-6 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                                <h4 id="bodyFont" class="mb-2 w3-xlarge text-center">Ring Bearers</h4>
-                                <p id="weddingDetails" class="m-0 text-center">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Ring Bearers</h4>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">
                                     Yedaiah Coen C. Jimenez</br>
                                     Gab Romero</br>
                                     <span style="color: red">Luke Ortiz?</span>
@@ -461,8 +452,8 @@
                         </div>
                         <div class="col-md-6 text-center text-md-left">
                             <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                                <h4 id="bodyFont" class="mb-2 w3-xlarge text-center">Flower Girls</h4>
-                                <p id="weddingDetails" class="m-0 text-center">
+                                <h4 id="weddingDetails" class="mb-2 w3-xlarge text-center">Flower Girls</h4>
+                                <p id="bodyFont" class="m-0 w3-medium text-center">
                                     Francia Miracle Golingan</br>
                                     Maia Golingan</br>
                                     Treycie Audé Buen</br>
@@ -474,60 +465,65 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="sponsors section-title position-relative text-center" id="sponsor">
-                <h1 id="tabTitle" class="display-4">Primary Sponsors</h1>
-            </div>
-            <div class="container timeline position-relative p-0">
-                <div class="weddingInfo">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-right">
-                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                                <p id="weddingDetails" class="m-0 text-center w3-large">
-                                    1. Jade Del Mundo</br>
-                                    2. Rudy Jarabata, MD</br>
-                                    3. <span style="color: red">TJ Del Mundo?</span></br>
-                                    4. Gov. Marvi Mariano
-                                </p>
-                            </div>
+    <!-- Sponsors -->
+    <div class="container-fluid py-5" id="sponsor">
+        <div class="section-title position-relative text-center">
+            <h1 id="tabTitle" class="display-4">Primary Sponsors</h1>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="container timeline position-relative p-0">
+            <div class="weddingInfo">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                            <p id="weddingDetails" class="m-0 text-center w3-large">
+                                1. Jade Del Mundo</br>
+                                2. Rudy Jarabata, MD</br>
+                                3. <span style="color: red">TJ Del Mundo?</span></br>
+                                4. Gov. Marvi Mariano
+                            </p>
                         </div>
-                        <div class="col-md-6 text-center text-md-left">
-                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                                <p id="weddingDetails" class="m-0 text-center w3-large">
-                                    1. Ma. Diana Ortiz, PhD</br>
-                                    2. Margie ES Soriano</br>
-                                    3. <span style="color: red">Elizabeth Micale / Tita Alma</span></br>
-                                    4. Erma ES Gerolaga
-                                </p>
-                            </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-left">
+                        <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                            <p id="weddingDetails" class="m-0 text-center w3-large">
+                                1. Ma. Diana Ortiz, PhD</br>
+                                2. Margie ES Soriano</br>
+                                3. <span style="color: red">Elizabeth Micale / Tita Alma</span></br>
+                                4. Erma ES Gerolaga
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="sponsors section-title position-relative text-center">
-                <h1 id="tabTitle" class="display-4">Secondary Sponsors</h1>
-            </div>
-            <div class="container timeline position-relative p-0">
-                <div class="weddingInfo">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-right">
-                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                                <p id="weddingDetails" class="m-0 text-center w3-large">
-                                    1. Joel Capote, Sgt</br>
-                                    2. Manong Randy</br>
-                                    3. Kuya Paulie
-                                </p>
-                            </div>
+        <div class="section-title position-relative text-center">
+            <h1 id="tabTitle" class="display-4">Secondary Sponsors</h1>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="container timeline position-relative p-0">
+            <div class="weddingInfo">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                            <p id="weddingDetails" class="m-0 text-center w3-large">
+                                1. Joel Capote, Sgt</br>
+                                2. Manong Randy</br>
+                                3. Kuya Paulie
+                            </p>
                         </div>
-                        <div class="col-md-6 text-center text-md-left">
-                            <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                                <p id="weddingDetails" class="m-0 text-center w3-large">
-                                    1. Edna Capote</br>
-                                    2. Alma Ginhawa</br>
-                                    3. Tita May
-                                </p>
-                            </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-left">
+                        <div class="d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                            <p id="weddingDetails" class="m-0 text-center w3-large">
+                                1. Edna Capote</br>
+                                2. Alma Ginhawa</br>
+                                3. Tita May
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -535,8 +531,19 @@
         </div>
     </div>
 
+    <!-- Travel Info -->
+    <div class="container-fluid py-5" id="travel">
+        <div class="section-title position-relative text-center">
+            <h1 id="tabTitle" class="display-4">Travel Info</h1>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="w3-content">
+            <p id="headers" class="w3-xxxlarge" style="text-align: center;">Getting here and staying there...</p>
+        </div>
+    </div>
+
     <!-- RSVP -->
-    <div class="w3-container w3-padding-64 w3-center" id="rsvp">
+    <div class="container-fluid py-5" id="rsvp">
         <div class="section-title position-relative text-center">
             <h1 id="tabTitle" class="display-4">RSVP</h1>
             <i class="far fa-heart text-dark"></i>

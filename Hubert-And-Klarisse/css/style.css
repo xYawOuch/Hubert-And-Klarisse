@@ -358,6 +358,14 @@ a {
     .nav-links li {
         margin: 10px 0;
     }
+
+    #bodyFont {
+        font-size: 12px!important;
+    }
+
+    #weddingDetails {
+        font-size: 18px!important;
+    }
 }
 
 .sponsors::before,
