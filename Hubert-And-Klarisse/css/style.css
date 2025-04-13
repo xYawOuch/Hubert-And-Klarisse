@@ -46,7 +46,6 @@
 
 #navBar a {
     font-family: 'Moon Time', Arial, sans-serif;
-    font-size: 24pt;
     width: 25%;
     font-weight: bold;
 }
@@ -101,10 +100,6 @@ html {
     background-image: url("https://www.w3schools.com/w3images/flowers.jpg")
 }
 
-a {
-    text-decoration: none;
-}
-
 .modal {
     position: fixed;
     top: 0;
@@ -136,7 +131,6 @@ a {
 
 .modal-content h1 {
     margin-bottom: 20px;
-    font-size: 24px;
     color: #333;
 }
 
@@ -144,7 +138,6 @@ a {
     background-color: #C1A37F;
     color: #ffffff;
     padding: 10px 20px;
-    font-size: 18px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -156,7 +149,7 @@ a {
 }
 
 
-@media (max-width:380px) { 
+/* @media (max-width:380px) { 
     iframe {
         height: 1500px;
     }
@@ -171,13 +164,11 @@ a {
     }
 
     .time-box span {
-        font-size: 1.5rem;
         display: block;
         margin-bottom: 10px;
     }
 
     .time-box p {
-        font-size: 0.4rem;
         margin: 0;
     }
 }
@@ -197,13 +188,11 @@ a {
     }
 
     .time-box span {
-        font-size: 1.8rem;
         display: block;
         margin-bottom: 10px;
     }
 
     .time-box p {
-        font-size: 0.7rem;
         margin: 0;
     }
 }
@@ -223,13 +212,11 @@ a {
     }
 
     .time-box span {
-        font-size: 2.5rem;
         display: block;
         margin-bottom: 10px;
     }
 
     .time-box p {
-        font-size: 1rem;
         margin: 0;
     }
 }
@@ -249,15 +236,31 @@ a {
     }
 
     .time-box span {
-        font-size: 3.5rem;
         display: block;
         margin-bottom: 10px;
     }
 
     .time-box p {
-        font-size: 1.5rem;
         margin: 0;
     }
+} */
+
+.time-box {
+    text-align: center;
+    border: 2px solid #D3A5A5;
+    padding: 20px;
+    border-radius: 10px;
+    width: auto;
+    color: #000;
+}
+
+.time-box span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.time-box p {
+    margin: 0;
 }
 
 .center-container {
@@ -295,7 +298,7 @@ a {
 }
 
 .menu-icon {
-    font-size: 28px;
+    font-size: 32px;
     cursor: pointer;
     display: none;
     background: none;
@@ -327,7 +330,6 @@ a {
 @media screen and (max-width: 992px) {
     .logo {
         display: inline-block;
-        font-size: 24px;
         font-weight: bold;
     }
 
@@ -357,12 +359,6 @@ a {
 
     .nav-links li {
         margin: 10px 0;
-    }
-
-    
-
-    #weddingDetails {
-        font-size: 18px!important;
     }
 }
 

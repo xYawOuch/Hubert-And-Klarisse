@@ -59,7 +59,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #818491;
+  color: #000;
   text-align: left;
   background-color: #FFFFFF;
 }
@@ -152,8 +152,7 @@ sup {
 }
 
 a {
-  color: #E47A2E;
-  text-decoration: none;
+  color: #000;
   background-color: transparent;
 }
 
@@ -364,7 +363,7 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-weight: 600;
   line-height: 1.2;
-  color: #121F38;
+  color: #000;
 }
 
 h1, .h1 {
@@ -9551,7 +9550,7 @@ a.text-dark:hover, a.text-dark:focus {
   height: 2px;
   bottom: 11px;
   left: calc(50% - 80px);
-  background: #E47A2E;
+  background: #D3A5A5;
 }
 
 .section-title::after {
@@ -9561,7 +9560,7 @@ a.text-dark:hover, a.text-dark:focus {
   height: 2px;
   bottom: 11px;
   right: calc(50% - 80px);
-  background: #E47A2E;
+  background: #D3A5A5;
 }
 
 .btn-play {
@@ -9670,7 +9669,7 @@ a.text-dark:hover, a.text-dark:focus {
     bottom: 0;
     left: 50%;
     margin-left: -1px;
-    background: #E47A2E;
+    background: #D3A5A5;
   }
   .timeline .row::before {
     content: "";
@@ -9680,7 +9679,7 @@ a.text-dark:hover, a.text-dark:focus {
     top: calc(50% - 15px);
     left: calc(50% - 15px);
     background: #FFFFFF;
-    border: 2px solid #E47A2E;
+    border: 2px solid #D3A5A5;
     transform: rotate(45deg);
     z-index: 1;
   }
@@ -9691,7 +9690,7 @@ a.text-dark:hover, a.text-dark:focus {
     position: absolute;
     top: calc(50% - 10px);
     left: calc(50% - 8px);
-    color: #E47A2E;
+    color: #D3A5A5;
     z-index: 2;
   }
 }
