@@ -1,3 +1,12 @@
+document.getElementById("openInvitation").addEventListener("click", function () {
+    const video = document.getElementById("invitationVideo");
+    video.pause();        // pause the video
+    video.currentTime = 0; // rewind to beginning (optional)
+
+    // If you're hiding the modal here, add that code too
+    document.getElementById("invitationModal").style.display = "none";
+});
+
 function toggleMenu() {
     let menu = document.getElementById("menu");
     menu.classList.toggle("active");
