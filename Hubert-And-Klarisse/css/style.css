@@ -148,103 +148,6 @@ html {
     background-color: #b38341;
 }
 
-
-/* @media (max-width:380px) { 
-    iframe {
-        height: 1500px;
-    }
-
-    .time-box {
-        text-align: center;
-        border: 2px solid #e47a2e;
-        padding: 20px;
-        border-radius: 10px;
-        width: 70px;
-        color: #111d35;
-    }
-
-    .time-box span {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .time-box p {
-        margin: 0;
-    }
-}
-
-@media (min-width: 381px) and (max-width:600px) {
-    iframe {
-        height: 1450px;
-    }
-
-    .time-box {
-        text-align: center;
-        border: 2px solid #e47a2e;
-        padding: 20px;
-        border-radius: 10px;
-        width: 100px;
-        color: #111d35;
-    }
-
-    .time-box span {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .time-box p {
-        margin: 0;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 992px) {
-    iframe {
-        height: 1400px;
-    }
-
-    .time-box {
-        text-align: center;
-        border: 2px solid #e47a2e;
-        padding: 20px;
-        border-radius: 10px;
-        width: 120px;
-        color: #111d35;
-    }
-
-    .time-box span {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .time-box p {
-        margin: 0;
-    }
-}
-
-@media (min-width:993px) {
-    iframe {
-        height: 1350px;
-    }
-
-    .time-box {
-        text-align: center;
-        border: 2px solid #e47a2e;
-        padding: 20px;
-        border-radius: 10px;
-        width: 150px;
-        color: #111d35;
-    }
-
-    .time-box span {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .time-box p {
-        margin: 0;
-    }
-} */
-
 .time-box {
     text-align: center;
     border: 2px solid #D3A5A5;
@@ -345,10 +248,9 @@ html {
         display: none;
         flex-direction: column;
         position: absolute;
-        bottom: 65px;
+        bottom: 0;
         right: 0;
         background: rgba(255, 255, 255, 0.5);
-        /* Slightly transparent */
         width: 150px;
         padding: 10px;
     }
@@ -372,4 +274,25 @@ html {
 .weddingInfo .row::after {
     content: none !important;
     display: none !important;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: calc(12vh + 10px);
+    left: 20px;
+    background-color: #E3D7D1;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-button img {
+    width: 28px;
+    height: 28px;
 }
