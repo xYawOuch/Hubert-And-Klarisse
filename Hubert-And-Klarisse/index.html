@@ -52,8 +52,10 @@
             opacity: 0;
             transform-origin: center;
             transition-property: opacity, transform;
-            transition-duration: var(--duration, 900ms);
-            transition-timing-function: cubic-bezier(.2, .9, .3, 1);
+            /* transition-duration: var(--duration, 900ms);
+            transition-timing-function: cubic-bezier(.2, .9, .3, 1); */
+            transition-duration: var(--duration, 2000ms);
+            transition-timing-function: ease-out;
             transition-delay: var(--delay, 0ms);
         }
 
@@ -69,12 +71,12 @@
 
         [data-animate="fade-left"],
         [data-animate-child="fade-left"] {
-            transform: translateX(0);
+            transform: translateX(-30px);
         }
 
         [data-animate="fade-right"],
         [data-animate-child="fade-right"] {
-            transform: translateX(0);
+            transform: translateX(30px);
         }
 
         [data-animate="zoom-in"],
@@ -110,6 +112,21 @@
             to {
                 transform: scale(1.06) translateY(-6%);
             }
+        }
+
+        [data-animate],
+        [data-animate-child] {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            max-width: 100%;
+        }
+
+        section,
+        .container-fluid,
+        .row {
+            overflow-x: hidden;
+            /* or clip */
         }
     </style>
 
