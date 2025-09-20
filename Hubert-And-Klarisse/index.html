@@ -10,9 +10,117 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="css/style-min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        #preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ddd;
+            border-top-color: #555;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Animations */
+        [data-animate],
+        [data-animate-child] {
+            opacity: 0;
+            transform-origin: center;
+            transition-property: opacity, transform;
+            transition-duration: var(--duration, 900ms);
+            transition-timing-function: cubic-bezier(.2, .9, .3, 1);
+            transition-delay: var(--delay, 0ms);
+        }
+
+        .in-view {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        [data-animate="fade-up"],
+        [data-animate-child="fade-up"] {
+            transform: translateY(20px);
+        }
+
+        [data-animate="fade-left"],
+        [data-animate-child="fade-left"] {
+            transform: translateX(-30px);
+        }
+
+        [data-animate="fade-right"],
+        [data-animate-child="fade-right"] {
+            transform: translateX(30px);
+        }
+
+        [data-animate="zoom-in"],
+        [data-animate-child="zoom-in"] {
+            transform: scale(.96);
+        }
+
+        /* Image hover */
+        img.img-fluid,
+        img#registryimg {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        img.img-fluid:hover,
+        img#registryimg:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Hero Kenburns */
+        .hero-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: kenburns 18s ease-in-out infinite alternate;
+        }
+
+        @keyframes kenburns {
+            from {
+                transform: scale(1) translateY(0);
+            }
+
+            to {
+                transform: scale(1.06) translateY(-6%);
+            }
+        }
+    </style>
+
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Modal "Goods!"-->
     <div class="modal" id="invitationModal">
         <div class="modal-content">
@@ -83,17 +191,18 @@
 
     <!-- Story "Goods!"-->
     <div class="container-fluid py-5" id="story">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">Our Love Story</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
         <div class="container timeline position-relative p-0">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/KH_PAGES_1.0.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3"
+                        data-animate-child="zoom-in">
                         <h4 id="headers" class="mb-2 w3-xlarge">Once Upon a Time...</h4>
                         <p id="bodyFont" class="m-0 w3-medium">In the enchanting land of the Philippines, nestled within
                             the walls
@@ -108,9 +217,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3"
+                        data-animate-child="zoom-in">
                         <h4 id="headers" class="mb-2 w3-xlarge">The First Spark</h4>
                         <p id="bodyFont" class="m-0 w3-medium">During the first week of medical school, outside the
                             anatomy
@@ -128,16 +238,17 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <img class="img-fluid ml-md-3" src="image/KH_PAGES_2.0.png" alt="">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/KH_PAGES_3.0.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3"
+                        data-animate-child="zoom-in">
                         <h4 id="headers" class="mb-2 w3-xlarge">Trials and Triumphs</h4>
                         <p id="bodyFont" class="m-0 w3-medium">Amidst the grueling challenges of medical school, the
                             prince and
@@ -150,9 +261,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3"
+                        data-animate-child="zoom-in">
                         <p id="bodyFont" class="m-0 w3-medium">One fateful day, just before an exam, Princess Klarisse
                             was so
                             engrossed in reviewing her
@@ -165,16 +277,17 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <img class="img-fluid ml-md-3" src="image/KH_PAGES_4.0.png" alt="">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/KH_PAGES_5.0.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3"
+                        data-animate-child="zoom-in">
                         <p id="bodyFont" class="m-0 w3-medium">As the first year of school passed, both endured
                             heartbreak in
                             their separate lives, mending
@@ -193,9 +306,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3"
+                        data-animate-child="zoom-in">
                         <h4 id="headers" class="mb-2 w3-xlarge">The Boracay Adventure</h4>
                         <p id="bodyFont" class="m-0 w3-medium">In October 2014, their friend group planned a trip to the
                             pristine
@@ -208,16 +322,17 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <img class="img-fluid ml-md-3" src="image/KH_PAGES_7.0.png" alt="">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/KH_PAGES_8.0.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3"
+                        data-animate-child="zoom-in">
                         <p id="bodyFont" class="m-0 w3-medium">On the second night, under a starlit sky by the ocean’s
                             edge, the
                             two found themselves alone
@@ -228,9 +343,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3"
+                        data-animate-child="zoom-in">
                         <p id="bodyFont" class="m-0 w3-medium">
                             "Fine, I’ll let you take me out on that date," she declared, "but just this once." That
                             magical first date, filled with parasailing, helmet diving, jet skiing, and a romantic
@@ -238,16 +354,17 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <img class="img-fluid ml-md-3" src="image/KH_PAGES_9.0.png" alt="">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/KH_PAGES_10.0.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3"
+                        data-animate-child="zoom-in">
                         <h4 id="headers" class="mb-2 w3-xlarge">A Love That Grew</h4>
                         <p id="bodyFont" class="m-0 w3-medium">From that day forward, their story unfolded like the most
                             beautiful
@@ -263,9 +380,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3"
+                        data-animate-child="zoom-in">
                         <h4 id="headers" class="mb-2 w3-xlarge">Happily Ever After</h4>
                         <p id="bodyFont" class="m-0 w3-medium">On November 12, 2023, under a sky illuminated by music
                             and lights
@@ -276,16 +394,17 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <img class="img-fluid ml-md-3" src="image/KH_PAGES_11.0.png" alt="">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/KH_PAGES_12.0_END.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3"
+                        data-animate-child="zoom-in">
                         <p id="bodyFont" class="m-0 w3-medium">Now, on October 25, 2025, after over a decade of shared
                             memories,
                             they will say “I do” at
@@ -301,7 +420,7 @@
 
     <!-- Wedding "Goods!"-->
     <div class="container-fluid py-5" id="wedding">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">Wedding Details</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
@@ -337,20 +456,20 @@
             </div>
             </br>
 
-            <div class="section-title position-relative text-center">
+            <div class="section-title position-relative text-center" data-animate="fade-up">
                 <h1 id="tabTitle" class="display-4 w3-xxxlarge">The Parents</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="container timeline position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-right">
+                    <div class="row" data-animate-group>
+                        <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                             <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-large text-center">Mario Golingan, Engr.</h4>
                                 <p id="bodyFont" class="m-0 w3-small text-center">Father of the Groom</p>
                             </div>
                         </div>
-                        <div class="col-md-6 text-center text-md-left">
+                        <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                             <div class="d-flex flex-column justify-content-center p-4 ml-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-large text-center">Ruben Espiritu Santo, Engr.
                                 </h4>
@@ -358,14 +477,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-right">
+                    <div class="row" data-animate-group>
+                        <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                             <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-large text-center">Amelia Perez, RN</h4>
                                 <p id="bodyFont" class="m-0 w3-small text-center">Mother of the Groom</p>
                             </div>
                         </div>
-                        <div class="col-md-6 text-center text-md-left">
+                        <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                             <div class="d-flex flex-column justify-content-center p-4 ml-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-large text-center">Annalyne Avendanio, MD</h4>
                                 <p id="bodyFont" class="m-0 w3-small text-center">Mother of the Bride</p>
@@ -375,20 +494,20 @@
                 </div>
             </div>
 
-            <div class="section-title position-relative text-center">
+            <div class="section-title position-relative text-center" data-animate="fade-up">
                 <h1 id="tabTitle" class="display-4 w3-xxxlarge">Siblings</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="container timeline position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-right">
+                    <div class="row" data-animate-group>
+                        <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                             <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-large text-center">Adrian Golingan</h4>
                                 <p id="bodyFont" class="m-0 w3-small text-center">Brother of the Groom</p>
                             </div>
                         </div>
-                        <div class="col-md-6 text-center text-md-left">
+                        <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                             <div class="d-flex flex-column justify-content-center p-4 ml-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-large text-center">Noel Nathan Avendanio</h4>
                                 <p id="bodyFont" class="m-0 w3-small text-center">Brother of the Bride</p>
@@ -398,13 +517,13 @@
                 </div>
             </div>
 
-            <div class="section-title position-relative text-center">
+            <div class="section-title position-relative text-center" data-animate="fade-up">
                 <h1 id="tabTitle" class="display-4 w3-xxxlarge">The Bridal Party</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="container position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row">
+                    <div class="row" data-animate-group>
                         <div class="col-md-12 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                                 <h4 id="weddingDetails" class="mb-2 w3-large text-center">Adrian Golingan</h4>
@@ -423,8 +542,8 @@
             </br>
             <div class="container timeline position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-right">
+                    <div class="row" data-animate-group>
+                        <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                             <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                                 <h4 id="bodyFont" class="mb-2 w3-large text-center">Groomsmen</h4>
                                 <p id="weddingDetails" class="m-0 w3-medium text-center">
@@ -439,7 +558,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-6 text-center text-md-left">
+                        <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                             <div class="d-flex flex-column justify-content-center p-4 ml-md-3">
                                 <h4 id="bodyFont" class="mb-2 w3-large text-center">Bridesmaids</h4>
                                 <p id="weddingDetails" class="m-0 w3-medium text-center">
@@ -456,8 +575,8 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-right">
+                    <div class="row" data-animate-group>
+                        <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                             <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                                 <h4 id="bodyFont" class="mb-2 w3-large text-center">Ring Bearers</h4>
                                 <p id="weddingDetails" class="m-0 w3-medium text-center">
@@ -467,7 +586,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-6 text-center text-md-left">
+                        <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                             <div class="d-flex flex-column justify-content-center p-4 ml-md-3">
                                 <h4 id="bodyFont" class="mb-2 w3-large text-center">Flower Girls</h4>
                                 <p id="weddingDetails" class="m-0 w3-medium text-center">
@@ -483,13 +602,13 @@
                 </div>
             </div>
 
-            <div class="section-title position-relative text-center">
+            <div class="section-title position-relative text-center" data-animate="fade-up">
                 <h1 id="tabTitle" class="display-4 w3-xxxlarge">Primary Sponsors</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="container position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row">
+                    <div class="row" data-animate-group>
                         <div class="col-md-12 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                                 <p id="weddingDetails" class="m-0 text-center w3-large">
@@ -514,13 +633,13 @@
                 </div>
             </div>
             </br>
-            <div class="section-title position-relative text-center">
+            <div class="section-title position-relative text-center" data-animate="fade-up">
                 <h1 id="tabTitle" class="display-4 w3-xxxlarge">Secondary Sponsors</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="container position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row">
+                    <div class="row" data-animate-group>
                         <div class="col-md-12 text-center text-md-right">
                             <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                                 <p id="weddingDetails" class="m-0 text-center w3-large">
@@ -543,7 +662,7 @@
 
     <!-- Itenirary "Goods!"-->
     <div class="container-fluid py-5" id="itenirary">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">Itenirary</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
@@ -556,7 +675,7 @@
 
     <!-- Kids Zone "Goods!"-->
     <div class="container-fluid py-5" id="kids">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">Kids Zone</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
@@ -596,7 +715,7 @@
 
     <!-- Travel Info "Goods!"-->
     <div class="container-fluid py-5" id="travel">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">Travel Info</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
@@ -634,8 +753,8 @@
 
             <p id="headers" class="w3-xxlarge">Hotel or Airbnb</p>
             <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
+                <div class="row" data-animate-group>
+                    <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/trails.png" alt="">
                     </div>
                     <div class="col-md-6 text-left text-md-left">
@@ -657,8 +776,8 @@
                 </div>
             </div>
             <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
+                <div class="row" data-animate-group>
+                    <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/auravel.png" alt="">
                     </div>
                     <div class="col-md-6 text-left text-md-left">
@@ -684,8 +803,8 @@
                 </div>
             </div>
             <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
+                <div class="row" data-animate-group>
+                    <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/coco.png" alt="">
                     </div>
                     <div class="col-md-6 text-left text-md-left">
@@ -710,8 +829,8 @@
                 </div>
             </div>
             <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
+                <div class="row" data-animate-group>
+                    <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/pearl.png" alt="">
                     </div>
                     <div class="col-md-6 text-left text-md-left">
@@ -731,8 +850,8 @@
                 </div>
             </div>
             <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
+                <div class="row" data-animate-group>
+                    <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/villa_soledad.png" alt="">
                     </div>
                     <div class="col-md-6 text-left text-md-left">
@@ -775,7 +894,7 @@
 
     <!-- RSVP "Goods!"-->
     <div class="container-fluid py-5" id="rsvp">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">RSVP</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
@@ -827,7 +946,7 @@
 
     <!-- Registry "Goods!"-->
     <div class="container-fluid py-5" id="registry">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">Registry</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
@@ -865,7 +984,7 @@
 
     <!-- FAQ "Goods!"-->
     <div class="container-fluid py-5" id="faq">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">FAQ</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
@@ -880,16 +999,16 @@
 
     <!-- Sponsors "Goods!"-->
     <div class="container-fluid py-5" id="sponsor">
-        <div class="section-title position-relative text-center">
+        <div class="section-title position-relative text-center" data-animate="fade-up">
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">Sponsor & Supplier</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
         <div class="container timeline position-relative p-0">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/pda_logo.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                         <p id="bodyFont" class="w3-medium">
                             Facebook Page: <a href="https://www.facebook.com/paraisodeavedad" target="_blank">
@@ -904,11 +1023,11 @@
             </div>
         </div>
         <div class="container timeline position-relative p-0">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/bryant.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                         <p id="bodyFont" class="w3-medium">
                             Contact #: 0991-861-1254</br>
@@ -920,11 +1039,11 @@
             </div>
         </div>
         <div class="container timeline position-relative p-0">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/coutuba.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                         <p id="bodyFont" class="w3-medium">
                             Facebook Page: <a
@@ -943,11 +1062,11 @@
             </div>
         </div>
         <div class="container timeline position-relative p-0">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/jv_films.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                         <p id="bodyFont" class="w3-medium">
                             Facebook Page: <a href="https://www.facebook.com/JubertValmoresPH" target="_blank">
@@ -961,11 +1080,11 @@
             </div>
         </div>
         <div class="container timeline position-relative p-0">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/the_5th_multimedia.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                         <p id="bodyFont" class="w3-medium">
                             Facebook Page: <a href="https://www.facebook.com/The5thMultiMedia" target="_blank">
@@ -979,11 +1098,11 @@
             </div>
         </div>
         <div class="container timeline position-relative p-0">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-right">
+            <div class="row" data-animate-group>
+                <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                     <img class="img-fluid mr-md-3" src="image/petal_palette.png" alt="">
                 </div>
-                <div class="col-md-6 text-center text-md-left">
+                <div class="col-md-6 text-center text-md-left" data-animate-child="fade-left">
                     <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                         <p id="bodyFont" class="w3-medium">
                             Styling by Jade U. Kha</br>
@@ -999,7 +1118,7 @@
 
         <div class="container position-relative p-0">
             <div class="weddingInfo">
-                <div class="row">
+                <div class="row" data-animate-group>
                     <div class="col-md-12 text-center text-md-center">
                         <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
 
@@ -1031,9 +1150,61 @@
 
     <script src="js/script.js"></script>
 
-    <!-- <a href="https://m.me/kla018" target="_blank" class="chat-button">
-        <img src="./image/messenger.png">
-    </a> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => { preloader.classList.add('fade-out'); });
+
+            const supportsIO = 'IntersectionObserver' in window;
+            const ioOptions = { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.12 };
+
+            if (supportsIO) {
+                const io = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            el.classList.add('in-view');
+                            if (el.dataset.animateOnce !== 'false') observer.unobserve(el);
+                        }
+                    });
+                }, ioOptions);
+
+                document.querySelectorAll('[data-animate]').forEach(el => {
+                    if (!el.closest('[data-animate-group]')) io.observe(el);
+                });
+            } else {
+                document.querySelectorAll('[data-animate]').forEach(el => el.classList.add('in-view'));
+            }
+
+            document.querySelectorAll('[data-animate-group]').forEach(group => {
+                const children = Array.from(group.querySelectorAll('[data-animate-child]'));
+                if (!children.length) return;
+
+                if (!supportsIO) {
+                    children.forEach((ch, i) => {
+                        ch.style.setProperty('--delay', `${i * 120}ms`);
+                        ch.classList.add('in-view');
+                    });
+                    return;
+                }
+
+                const groupObserver = new IntersectionObserver((entries, gObserver) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            children.forEach((ch, i) => {
+                                ch.style.setProperty('--delay', `${i * 120}ms`);
+                                ch.classList.add('in-view');
+                            });
+                            gObserver.unobserve(entry.target);
+                        }
+                    });
+                }, ioOptions);
+
+                groupObserver.observe(group);
+            });
+        });
+    </script>
+
 </body>
 
 
