@@ -151,10 +151,10 @@
     </div>
 
     <!-- Background Music "Goods!"-->
-    <audio id="backgroundMusic" loop>
+    <!-- <audio id="backgroundMusic" loop>
         <source src="audio/next-to-me-by-rufus-du-sol.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-    </audio>
+    </audio> -->
 
     <!-- Navbar (sticky bottom) "Goods!"-->
     <nav id="navBar" class="navbar w3-xlarge">
@@ -442,7 +442,7 @@
             <i class="far fa-heart text-dark"></i>
         </div>
         <div class="w3-content">
-            <div class="center-container">
+            <div class="center-container" data-animate="fade-up">
                 <div id="bodyFont" class="countdown">
                     <div class="time-box">
                         <span class="w3-xxxlarge" style="border-bottom: 1px solid;" id="days">00</span>
@@ -459,8 +459,8 @@
                 </div>
             </div>
 
-            <img src="./image/venue_img.png" style="width:100%;">
-            <div class="w3-center">
+            <img src="./image/venue_img.png" style="width:100%;" data-animate="fade-up">
+            <div class="w3-center" data-animate="fade-up">
                 <p id="bodyFont" class="w3-medium">
                     ceremony and reception at</br>
                     <span id="headers" class="w3-xxlarge">
@@ -540,9 +540,10 @@
             </div>
             <div class="container position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row" data-animate-group>
+                    <div class="row">
                         <div class="col-md-12 text-center text-md-right">
-                            <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
+                            <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3"
+                                data-animate="fade-up">
                                 <h4 id="weddingDetails" class="mb-2 w3-large text-center">Adrian Golingan</h4>
                                 <p id="bodyFont" class="m-0 w3-small text-center">Best Man</p>
                                 </br>
@@ -625,9 +626,10 @@
             </div>
             <div class="container position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row" data-animate-group>
+                    <div class="row">
                         <div class="col-md-12 text-center text-md-right">
-                            <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
+                            <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3"
+                                data-animate="fade-up">
                                 <p id="weddingDetails" class="m-0 text-center w3-large">
                                     Ma Diana Ortiz</br>
                                     Cesar Perez
@@ -656,9 +658,10 @@
             </div>
             <div class="container position-relative p-0">
                 <div class="weddingInfo">
-                    <div class="row" data-animate-group>
+                    <div class="row">
                         <div class="col-md-12 text-center text-md-right">
-                            <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
+                            <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3"
+                                data-animate="fade-up">
                                 <p id="weddingDetails" class="m-0 text-center w3-large">
                                     Edna Capote</br>
                                     Jose Espiritu Santo
@@ -685,7 +688,7 @@
         </div>
         <div class="w3-content">
             <div class="w3-center">
-                <img src="./image/timeline.png" style="width:100%;">
+                <img src="./image/timeline.png" style="width:100%;" data-animate="fade-up">
             </div>
         </div>
     </div>
@@ -697,8 +700,8 @@
             <i class="far fa-heart text-dark"></i>
         </div>
         <div class="w3-content">
-            <img src="./image/kids_img.png" style="width:100%;">
-            <div class="w3-center">
+            <img src="./image/kids_img.png" style="width:100%;" data-animate="fade-up">
+            <div class="w3-center" data-animate="fade-up">
                 <p id="bodyFont" class="w3-medium">
                     We are excited to welcome your little ones to the celebration and want to ensure they have a magical
                     experience of their own! Our wedding will feature a special Kids Zone, designed with fun and safety
@@ -737,13 +740,15 @@
             <i class="far fa-heart text-dark"></i>
         </div>
         <div class="w3-center">
-            <p id="headers" class="w3-xxlarge">Getting here and staying there...</p>
-            <p id="bodyFont" class="w3-medium">All the information you need for a smooth journey to our wedding</p>
+            <p id="headers" class="w3-xxlarge" data-animate="fade-up">Getting here and staying there...</p>
+            <p id="bodyFont" class="w3-medium" data-animate="fade-up">All the information you need for a smooth journey
+                to our wedding</p>
             </br>
-            <p id="headers" class="w3-xxlarge">The Venue</br><span id="bodyFont" class="w3-large">Paraiso De
+            <p id="headers" class="w3-xxlarge" data-animate="fade-up">The Venue</br><span id="bodyFont"
+                    class="w3-large">Paraiso De
                     Avedad</span></p>
 
-            <p class="w3-small">
+            <p class="w3-small" data-animate="fade-up">
                 <button
                     onclick="window.open('https://www.google.com/maps/place/Paraiso+de+Avedad/@14.0158912,121.3378215,17z/data=!3m1!4b1!4m6!3m5!1s0x33bd439b36852c9f:0x7d0c84c08f7585b4!8m2!3d14.015886!4d121.3403964!16s%2Fg%2F11b7cmjgk5?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D');"
                     class="w3-button w3-round w3-dark-grey w3-opacity w3-hover-opacity-off"
@@ -755,8 +760,8 @@
             </p>
             </br></br>
 
-            <p id="headers" class="w3-xxlarge">Van Services</p>
-            <p id="bodyFont" class="w3-medium">
+            <p id="headers" class="w3-xxlarge" data-animate="fade-up">Van Services</p>
+            <p id="bodyFont" class="w3-medium" data-animate="fade-up">
                 Contact Person: Ray Ann Manzana</br>
                 Contact #: 0906-789-0811</br>
                 UV Express Driver
@@ -768,13 +773,13 @@
             </p>
             </br></br>
 
-            <p id="headers" class="w3-xxlarge">Hotel or Airbnb</p>
+            <p id="headers" class="w3-xxlarge" data-animate="fade-up">Hotel or Airbnb</p>
             <div class="container timeline position-relative p-0">
                 <div class="row" data-animate-group>
                     <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/trails.png" alt="">
                     </div>
-                    <div class="col-md-6 text-left text-md-left">
+                    <div class="col-md-6 text-left text-md-left" data-animate-child="fade-left">
                         <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                             <p id="bodyFont" class="w3-medium">
                                 Facebook Page: <a
@@ -797,7 +802,7 @@
                     <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/auravel.png" alt="">
                     </div>
-                    <div class="col-md-6 text-left text-md-left">
+                    <div class="col-md-6 text-left text-md-left" data-animate-child="fade-left">
                         <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                             <p id="bodyFont" class="w3-medium">
                                 Facebook Page: <a href="https://www.facebook.com/auravelofficial/" target="_blank">
@@ -824,7 +829,7 @@
                     <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/coco.png" alt="">
                     </div>
-                    <div class="col-md-6 text-left text-md-left">
+                    <div class="col-md-6 text-left text-md-left" data-animate-child="fade-left">
                         <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                             <p id="bodyFont" class="w3-medium">
                                 Facebook Page: <a href="https://www.facebook.com/thecocopalacehotel" target="_blank">
@@ -850,7 +855,7 @@
                     <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/pearl.png" alt="">
                     </div>
-                    <div class="col-md-6 text-left text-md-left">
+                    <div class="col-md-6 text-left text-md-left" data-animate-child="fade-left">
                         <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                             <p id="bodyFont" class="w3-medium">
                                 Facebook Page: <a href="https://www.facebook.com/platinumpearlhotel" target="_blank">
@@ -871,7 +876,7 @@
                     <div class="col-md-6 text-center text-md-right" data-animate-child="fade-right">
                         <img class="img-fluid mr-md-3" src="image/villa_soledad.png" alt="">
                     </div>
-                    <div class="col-md-6 text-left text-md-left">
+                    <div class="col-md-6 text-left text-md-left" data-animate-child="fade-left">
                         <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                             <p id="bodyFont" class="w3-medium">
                                 Facebook Page: <a href="https://www.facebook.com/Villasoledadgardenresort/"
@@ -894,7 +899,8 @@
             </div>
             </br></br>
 
-            <p id="bodyFont" class="w3-medium">Looking for More Hotels Nearby (Within 3 Hours)?</br>
+            <p id="bodyFont" class="w3-medium" data-animate="fade-up">Looking for More Hotels Nearby (Within 3
+                Hours)?</br>
                 <span class="w3-small">Check out some great options just a short drive away – you might find the
                     perfect spot!</span></br>
                 <a href="./image/hubkla_hotels.pdf" download="hubkla_hotels.pdf" target="_blank" class="w3-xlarge">[See
@@ -918,31 +924,34 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="h-100 d-flex flex-column justify-content-center p-4 text-left">
-                    <p id="bodyFont" class="w3-medium">
+                    <p id="bodyFont" class="w3-medium" data-animate="fade-up">
                         We’re excited to share this special day with you! Kindly let us know if you'll be able to join
                         us in celebrating.
                     </p>
 
-                    <p id="bodyFont" class="w3-medium fst-italic">- Hubert & Klarisse</p>
+                    <p id="bodyFont" class="w3-medium fst-italic" data-animate="fade-up">- Hubert & Klarisse</p>
 
                     <hr>
 
-                    <h5 id="bodyFont" class="w3-large"><strong>Wedding Details</strong></h5>
-                    <p id="bodyFont" class="w3-medium"><strong>Location:</strong> 0459 Purok 3 Sitio Balanga Barangay
+                    <h5 id="bodyFont" class="w3-large" data-animate="fade-up"><strong>Wedding Details</strong></h5>
+                    <p id="bodyFont" class="w3-medium" data-animate="fade-up"><strong>Location:</strong> 0459 Purok 3
+                        Sitio Balanga Barangay
                         San Antonio 1, San Pablo City, Laguna</p>
-                    <p id="bodyFont" class="w3-medium"><strong>Date:</strong> October 25, 2025</p>
-                    <p id="bodyFont" class="w3-medium"><strong>Time:</strong><br>
+                    <p id="bodyFont" class="w3-medium" data-animate="fade-up"><strong>Date:</strong> October 25, 2025
+                    </p>
+                    <p id="bodyFont" class="w3-medium" data-animate="fade-up"><strong>Time:</strong><br>
                         • Ceremony: 3:30 pm<br>
                         • Cocktail Hour & Reception: 4:30 pm - 12:00 am
                     </p>
-                    <p id="bodyFont" class="w3-medium"><strong>Attire:</strong> Formal</p>
-                    <p id="bodyFont" class="w3-medium">The ceremony will be a garden wedding. Rain-or-Shine, the show
+                    <p id="bodyFont" class="w3-medium" data-animate="fade-up"><strong>Attire:</strong> Formal</p>
+                    <p id="bodyFont" class="w3-medium" data-animate="fade-up">The ceremony will be a garden wedding.
+                        Rain-or-Shine, the show
                         will go on. Please be prepared.</p>
 
                     <hr>
 
-                    <h5 id="bodyFont" class="w3-large"><strong>Important Note:</strong></h5>
-                    <ul>
+                    <h5 id="bodyFont" class="w3-large" data-animate="fade-up"><strong>Important Note:</strong></h5>
+                    <ul data-animate="fade-up">
                         <li id="bodyFont" class="w3-medium"><strong>RSVP is required.</strong> You will not be able to
                             enter the venue if your name(s) are not on the guest list.</li>
                         <li id="bodyFont" class="w3-medium">Once you’ve completed the form, <strong>you will receive a
@@ -958,7 +967,7 @@
         </div>
         <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSeH29udFEVq8i2kKU27qT16Xm9mHVMhcHINZSp2VcfZMLU6eA/viewform?embedded=true"
-            style="width:100%; height:500px;" scrolling="yes" frameborder="0"></iframe>
+            style="width:100%; height:500px;" scrolling="yes" frameborder="0" data-animate="fade-up"></iframe>
     </div>
 
     <!-- Registry "Goods!"-->
@@ -968,7 +977,8 @@
             <i class="far fa-heart text-dark"></i>
         </div>
         <div class="w3-center">
-            <p id="bodyFont" class="w3-medium">Your love and support mean the world to us as we embark on this new
+            <p id="bodyFont" class="w3-medium" data-animate="fade-up">Your love and support mean the world to us as we
+                embark on this new
                 adventure together. In lieu of traditional gifts, we kindly request contributions toward our honeymoon
                 and future home.
                 </br></br>
@@ -986,15 +996,16 @@
                 us create a warm and welcoming space filled with joy and cherished moments.
             </p>
             </br>
-            <p id="bodyFont" class="w3-xlarge">A card box will be at the venue</p>
+            <p id="bodyFont" class="w3-xlarge" data-animate="fade-up">A card box will be at the venue</p>
             </br>
-            <p id="weddingDetails" class="w3-xxlarge">Send Money with Wise</br><a
-                    href="https://wise.com/pay/me/klarissee1" class="w3-large">Click Me!</a></p>
+            <p id="weddingDetails" class="w3-xxlarge" data-animate="fade-up">Send Money with Wise</br><a
+                    href="https://wise.com/pay/me/klarissee1" target="_blank" class="w3-large">Click Me!</a></p>
             </br>
-            <img src="./image/venmo.png" id="registryimg">
-            <img src="./image/zelle.png" id="registryimg">
+            <img src="./image/venmo.png" id="registryimg" data-animate="fade-up">
+            <img src="./image/zelle.png" id="registryimg" data-animate="fade-up">
             </br></br>
-            <p id="weddingDetails" class="w3-xlarge">We are incredibly grateful for your support and can't wait to
+            <p id="weddingDetails" class="w3-xlarge" data-animate="fade-up">We are incredibly grateful for your support
+                and can't wait to
                 celebrate our special day with you!</p>
         </div>
     </div>
@@ -1005,7 +1016,7 @@
             <h1 id="tabTitle" class="display-4 w3-xxxlarge">FAQ</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
-        <div class="w3-center">
+        <div class="w3-center" data-animate="fade-up">
             <p id="bodyFont" class="w3-large">For inquiries, please contact Klarisse or Hubert:</br>
                 Facebook: <a href="https://www.facebook.com/kla018#" target="_blank">Klarisse Espiritu Santo</a></br>
                 Email Address: klabertgolingan@gmail.com</br>
@@ -1132,30 +1143,20 @@
                 </div>
             </div>
         </div>
-
-        <div class="container position-relative p-0">
-            <div class="weddingInfo">
-                <div class="row" data-animate-group>
-                    <div class="col-md-12 text-center text-md-center">
-                        <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <hr>
     <!-- Footer "Goods!"-->
     <div class="container-fluid py-5">
         <div class="w3-content">
             <div class="w3-center">
-                <p id="tabTitle" class="w3-xxlarge">With hearts full of love, we can't wait to celebrate
+                <p id="tabTitle" class="w3-xxlarge" data-animate="fade-up">With hearts full of love, we can't wait to
+                    celebrate
                     with you!</p>
                 </br></br>
-                <p id="headerMain" class="w3-xxxlarge">HUBERT&nbsp;<span id="headerSub">&</span>&nbsp;&nbsp;KLARISSE</p>
+                <p id="headerMain" class="w3-xxxlarge" data-animate="fade-up">HUBERT&nbsp;<span
+                        id="headerSub">&</span>&nbsp;&nbsp;KLARISSE</p>
                 </br></br>
-                <p id="bodyFont" class="w3-large">Website Inquiries</br>
+                <p id="bodyFont" class="w3-large" data-animate="fade-up">Website Inquiries</br>
                     <span class="w3-small">If you have any questions or concerns regarding this website, please feel
                         free to contact us at:</br>
                         📧 sayidowithus.info@gmail.com</span>
